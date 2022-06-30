@@ -31,7 +31,7 @@ public class MemberController {
 	
 	//회원가입 실제 처리
 	@PostMapping("/signup")
-	public String singupPost(MemberDTO memberDTO, Model model) {
+	/*public String singupPost(MemberDTO memberDTO, Model model) {
 		log.info("signup 처리");
 		log.info("memberDTO: " + memberDTO);
 		
@@ -43,7 +43,7 @@ public class MemberController {
 		
 		//처리 후 메인으로 이동
 		return "redirect:/main";
-	}
+	}*/
 	
 	//로그인 화면 요청
 	@GetMapping("/login")

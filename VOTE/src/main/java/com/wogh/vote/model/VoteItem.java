@@ -13,24 +13,28 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.ToString;
 
 @Entity
-@Table(name = "votedetail")
+@Table(name = "voteitem")
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
-@ToString(exclude = "voteitem")
-public class VoteDetail {
-
+@Setter
+@ToString(exclude = "board")
+public class VoteItem {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long dno;
+	private Long ino;
 	
-	private String voter;
+	private String item;
+	
+	private String imageurl;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "item_num")
-	private VoteItem voteitem;
+	@JoinColumn(name = "board_num")
+	private Board board;
 }

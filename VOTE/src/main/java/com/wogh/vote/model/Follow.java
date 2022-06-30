@@ -5,6 +5,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 import lombok.AllArgsConstructor;
@@ -18,15 +19,16 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
-@ToString(exclude = "email")
+@ToString(exclude = "member")
 public class Follow {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long fno;
 	
-	private String followingEmail;
+	private String followingemail;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	private Member email;
+	@JoinColumn(name = "member_email")
+	private Member member;
 }

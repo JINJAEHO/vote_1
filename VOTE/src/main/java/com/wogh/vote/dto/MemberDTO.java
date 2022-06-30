@@ -1,5 +1,7 @@
 package com.wogh.vote.dto;
 
+import java.time.LocalDateTime;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,9 +15,12 @@ import lombok.ToString;
 @ToString
 public class MemberDTO {
 	
+	private Long mno;
 	private String email;
 	private String password;
 	private String name;
 	private String nickname;
-	private boolean official_mark;
+	private LocalDateTime regdate;
+	private LocalDateTime moddate;
+	private boolean officialmark;
 }
